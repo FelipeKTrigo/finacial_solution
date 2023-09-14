@@ -12,6 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+@Builder
 @Table(name = "tb_client")
 public class Client {
 
@@ -22,7 +23,6 @@ public class Client {
     @NotBlank(message = "name can't be blank")
     private String name;
     @NotNull(message = "salary can't be null")
-    @NotBlank(message = "salary can't be blank")
     private Double salary;
     private Boolean deleted;
     @OneToMany

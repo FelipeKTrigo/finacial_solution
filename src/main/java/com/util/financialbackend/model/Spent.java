@@ -1,7 +1,6 @@
 package com.util.financialbackend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -12,6 +11,8 @@ import lombok.*;
 @ToString
 @Table(name = "tb_spent")
 public class Spent {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Double price;
     private Double percentage;

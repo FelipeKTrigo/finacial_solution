@@ -3,14 +3,15 @@ package com.util.financialbackend.service;
 import com.util.financialbackend.model.Client;
 import com.util.financialbackend.model.Spent;
 import com.util.financialbackend.repository.ClientRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicReference;
 
 @Service
+@AllArgsConstructor
 public class ClientService {
 
     @Autowired

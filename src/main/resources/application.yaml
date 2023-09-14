@@ -7,10 +7,15 @@ spring:
       settings.web-allow-others: false
   datasource:
     url: jdbc:h2:mem:testdb
-    username: user
-    password: ag!p
+    username: root
+    password: root
     driverClassName: org.h2.Driver
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
