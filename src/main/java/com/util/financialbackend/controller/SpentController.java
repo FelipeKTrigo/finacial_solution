@@ -26,14 +26,4 @@ public class SpentController {
         return ResponseEntity.ok(service.find(id));
     }
 
-    @PostMapping("/save")
-    public ResponseEntity<Spent> saveSpent(@RequestBody SpentRequestDTO spent) {
-        return ResponseEntity
-                .status(201)
-                .body(service.save(new Spent(
-                        null,
-                        spent.getPrice(),
-                        null,
-                        spent.getName())));
-    }
 }
