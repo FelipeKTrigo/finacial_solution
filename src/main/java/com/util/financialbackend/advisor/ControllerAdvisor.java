@@ -1,5 +1,6 @@
 package com.util.financialbackend.advisor;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ControllerAdvisor {
 
     @ExceptionHandler({Exception.class})
-    public Error advise(Exception e){
-        return new Error(e.getMessage());
+    public ResponseEntity<Error> advise(Exception e){
+        return ResponseEntity.status(400).body(new Error(e.getMessage()));
     }
 }
