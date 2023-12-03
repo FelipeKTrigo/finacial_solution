@@ -24,7 +24,6 @@ public class SpentController {
 
     @GetMapping("/list")
     public ResponseEntity<List<Spent>> getSpents() {
-        System.out.println("abriu o spent lister");
         return ResponseEntity.ok(service.list());
     }
 
@@ -39,7 +38,7 @@ public class SpentController {
     }
     @DeleteMapping("/delete")
     public ResponseEntity daleteSpents(@Param("id") Long id) throws Exception {
-        clientService.deleteLogic(id);
+        service.delete(id);
         return ResponseEntity.ok().build();
     }
 }
