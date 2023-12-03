@@ -22,8 +22,13 @@ public class Client {
     @NotNull(message = "name can't be null")
     @NotBlank(message = "name can't be blank")
     private String name;
+
+
     @NotNull(message = "salary can't be null")
     private Double salary;
+    @Column(name = "phone")
+    private String phoneNumber;
+    private String email;
     private Boolean deleted;
     @OneToMany
     @JoinColumn(name = "client_id")

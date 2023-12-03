@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*",allowedHeaders = "*")
 @RestController
 @RequestMapping("/v1/spent")
 public class SpentController {
@@ -23,6 +24,7 @@ public class SpentController {
 
     @GetMapping("/list")
     public ResponseEntity<List<Spent>> getSpents() {
+        System.out.println("abriu o spent lister");
         return ResponseEntity.ok(service.list());
     }
 
@@ -35,5 +37,9 @@ public class SpentController {
         Client c = clientService.find(id);
         return ResponseEntity.ok(new ClientSpentsResponseDTO(c.getId(),c.getName(),c.getSalary(),c.getSpents()));
     }
-
+    @DeleteMapping("/delete")
+    public ResponseEntity daleteSpents(@Param("id") Long id) throws Exception {
+        clientService.deleteLogic(id);
+        return ResponseEntity.ok().build();
+    }
 }
