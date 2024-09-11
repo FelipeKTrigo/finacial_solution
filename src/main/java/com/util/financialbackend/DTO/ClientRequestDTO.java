@@ -14,4 +14,5 @@ public class ClientRequestDTO {
     private Double salary;
     private String phoneNumber;
     private String email;
+    private String password;
 }

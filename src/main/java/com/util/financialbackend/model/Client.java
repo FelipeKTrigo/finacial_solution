@@ -28,7 +28,12 @@ public class Client {
     private Double salary;
     @Column(name = "phone")
     private String phoneNumber;
+    @NotBlank(message = "password can't be blank")
+    @NotNull(message = "password can't be null")
     private String email;
+    @NotBlank(message = "password can't be blank")
+    @NotNull(message = "password can't be null")
+    private String password;
     private Boolean deleted;
     @OneToMany
     @JoinColumn(name = "client_id")

@@ -44,6 +44,7 @@ public class CustomerController {
                 c.getSalary(),
                 c.getPhoneNumber(),
                 c.getEmail(),
+                c.getPassword(),
                 false,
                 null));
         return ResponseEntity
